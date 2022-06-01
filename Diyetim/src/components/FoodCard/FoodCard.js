@@ -1,9 +1,11 @@
 import React from "react";
-import {View,Text,Image} from 'react-native'
+import {View,Text,Image,TouchableOpacity} from 'react-native'
 import styles from './FoodCard.style'
-const FoodCard = ({food}) => {
+const FoodCard = ({food,goFoodDetail}) => {
     return(
-        <View style={styles.container} >
+        <TouchableOpacity 
+        onPress={() =>goFoodDetail(food)}
+        style={styles.container} >
            <View style={styles.image_container} >
            <Text
             style={styles.text}
@@ -21,10 +23,6 @@ const FoodCard = ({food}) => {
            >{food.serving_qty}</Text>
            </View>
                 <View style={styles.inner_container} >
-                <Text>Food</Text>
-               
-                </View>
-                <View style={styles.inner_container} >
                 <Text>Calories</Text>
                 <Text
                 numberOfLines={1}
@@ -35,10 +33,10 @@ const FoodCard = ({food}) => {
                 <Text>Brand</Text>
                 <Text
                   numberOfLines={1}
-                  style={{maxWidth:50}}
+                  style={{maxWidth:200}}
                 >{food.brand_name}</Text>
                 </View>
-        </View>
+        </TouchableOpacity>
     )
 }
 

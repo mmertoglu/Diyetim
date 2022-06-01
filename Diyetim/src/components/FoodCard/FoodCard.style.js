@@ -10,29 +10,36 @@ export default StyleSheet.create({
         backgroundColor:'white',
         flexDirection:'row',
         justifyContent:'space-between',
-        padding:10
+        padding:10,
+        margin:5,
+        elevation:10
         
     },
     image:{
         height:50,
-        width:80,
-        backgroundColor:'white'
+        width:100,
+        backgroundColor:'white',
+        alignSelf:'flex-start'
     },
     text:{
-    width:100,
     color:'black',
-    fontSize:10
+    fontSize:12,
+    alignSelf:'center',
+    marginBottom:5,
+    fontWeight:'bold'
+    
     },
    inner_container:{
        justifyContent:'space-between',
        alignItems:'flex-start',
-       width:70,
+       width:80,
        padding:5
        
    },
    image_container:{
        justifyContent:'space-between',
-       alignItems:'flex-start',
-       width:100
+       alignItems:'center',
+       width:100,
+       
    }
 })
