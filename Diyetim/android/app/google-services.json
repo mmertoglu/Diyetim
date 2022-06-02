@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "317334106467",
+    "project_id": "diyetim-6f1bb",
+    "storage_bucket": "diyetim-6f1bb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:317334106467:android:b2901eb67d697112c62356",
+        "android_client_info": {
+          "package_name": "com.diyetim"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "317334106467-bdpbo6l3v4keo8k38i9cm5ntnt3p8c4p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcptHlKCI6DQma6RzSWNMa3dCZXE-Tjzw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "317334106467-bdpbo6l3v4keo8k38i9cm5ntnt3p8c4p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
