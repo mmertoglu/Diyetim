@@ -3,12 +3,14 @@ import {NavigationContainer} from '@react-navigation/native'
 import {createNativeStackNavigator} from '@react-navigation/native-stack'
 import Home from "./src/pages/Home/Home";
 import FoodDetail from "./src/pages/FoodDetail/FoodDetail";
+import SignUp from "./src/pages/SignUp/SignUp";
 const Stack = createNativeStackNavigator();
 
 const App = () => {
   return(
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown:false}} >
+        <Stack.Screen name="SignUpPage" component={SignUp} />
         <Stack.Screen name="HomeScreen" component={Home} />
         <Stack.Screen name="FoodDetailScreen" component={FoodDetail} />
       </Stack.Navigator>
