@@ -4,11 +4,14 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack'
 import Home from "./src/pages/Home/Home";
 import FoodDetail from "./src/pages/FoodDetail/FoodDetail";
 import SignUp from "./src/pages/SignUp/SignUp";
+import { StatusBar } from "react-native";
+import colors from "./src/assets/colors/colors";
 const Stack = createNativeStackNavigator();
 
 const App = () => {
   return(
     <NavigationContainer>
+      <StatusBar backgroundColor={colors.pink} />
       <Stack.Navigator screenOptions={{headerShown:false}} >
         <Stack.Screen name="SignUpPage" component={SignUp} />
         <Stack.Screen name="HomeScreen" component={Home} />
