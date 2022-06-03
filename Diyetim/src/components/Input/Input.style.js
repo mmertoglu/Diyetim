@@ -10,5 +10,8 @@ export default StyleSheet.create({
         marginVertical: 5,
         justifyContent:'space-between',
         alignItems:'center'
+    },
+    input:{
+        width:200
     }
 })

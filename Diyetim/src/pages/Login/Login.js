@@ -12,13 +12,11 @@ const Login = ({navigation}) => {
     const handleSignUp = async () => {
         try {
             await auth().signInWithEmailAndPassword(email,password)
-            navigation.navigate('UserInfoPage')
+            navigation.navigate('TabStack')
         } catch (error) {
             console.log(error)
         }
     }
-    
-
     return(
         <View style={styles.container} >
             <View style={styles.header_container} >
