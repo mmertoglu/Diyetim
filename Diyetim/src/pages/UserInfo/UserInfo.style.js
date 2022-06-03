@@ -3,7 +3,8 @@ import colors from "../../assets/colors/colors";
 export default StyleSheet.create({
     container:{
         flex:1,
-        backgroundColor:colors.pink
+        backgroundColor:colors.pink,
+        paddingTop:50
     },
     text:{
         color:'white',
@@ -15,6 +16,25 @@ export default StyleSheet.create({
         margin:10,
         borderRadius:8,
         elevation:10,
-        marginTop:50
+        marginTop:50,
+        flexDirection:'row',
+        justifyContent:'space-between',
+        alignItems:'center',
+        paddingRight:10
+    },
+    button:{
+        backgroundColor:'#A6055E',
+        marginTop:50,
+        margin:10,
+        borderRadius:8,
+        elevation:10,
+        padding:10,
+        alignItems:'center',
+        justifyContent:'center'
+    },
+    button_text:{
+        color:'white',
+        fontSize:16,
+        fontWeight:'bold'
     }
 })
