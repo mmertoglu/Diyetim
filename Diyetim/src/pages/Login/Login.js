@@ -1,25 +1,23 @@
 import React,{useState} from "react";
 import {View,Text,TextInput, TouchableOpacity} from 'react-native'
-import styles from './SignUp.style'
+import styles from './Login.style'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import Input from "../../components/Input/Input";
 import auth from '@react-native-firebase/auth'
-const SignUp = ({navigation}) => {
+const Login = ({navigation}) => {
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('')
     const [repassword,setRepassword] = useState('')
 
     const handleSignUp = async () => {
         try {
-            await auth().createUserWithEmailAndPassword(email,password)
+            await auth().signInWithEmailAndPassword(email,password)
             navigation.navigate('UserInfoPage')
         } catch (error) {
-            
+            console.log(error)
         }
     }
-    const goLoginPage = () => {
-        navigation.navigate('LoginPage')
-    }
+    
 
     return(
         <View style={styles.container} >
@@ -30,16 +28,13 @@ const SignUp = ({navigation}) => {
             <View style={styles.body_container} >
             <Input placeholder='email...' iconName='user' onChangeText={text => setEmail(text)}  />
             <Input placeholder='password' iconName='key' secureTextEntry={true} onChangeText={text => setPassword(text)} />
-            <Input placeholder='re-password' iconName='key' secureTextEntry={true} onChangeText={text => setRepassword(text)} />
             <TouchableOpacity onPress={handleSignUp} style={styles.button} >
-                <Text  style={styles.button_text} >Sign up</Text>
+                <Text  style={styles.button_text} >Login</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={goLoginPage}>
-            <Text style={styles.have_account_text} >Already have an account?</Text>
-            </TouchableOpacity>
+           
             </View>
         </View>
     )
 }
 
-export default SignUp
+export default Login
