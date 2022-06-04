@@ -47,7 +47,7 @@ const UserInfo = ({navigation}) => {
             }
             console.log(newCurrent)
             await database().ref('users/'+newCurrent+'/'+'userInfo/').set(userInfo)
-            navigation.navigate('HomeScreen')
+            navigation.navigate('TabStack')
         } catch (error) {
             console.log(error)
         }

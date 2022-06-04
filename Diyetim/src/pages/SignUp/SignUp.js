@@ -14,7 +14,7 @@ const SignUp = ({navigation}) => {
             await auth().createUserWithEmailAndPassword(email,password)
             navigation.navigate('UserInfoPage')
         } catch (error) {
-            
+            console.log(error)
         }
     }
     const goLoginPage = () => {

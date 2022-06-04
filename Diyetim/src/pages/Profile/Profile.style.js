@@ -1,0 +1,60 @@
+import { StyleSheet } from "react-native";
+import colors from "../../assets/colors/colors";
+export default StyleSheet.create({
+    container:{
+        flex:1,
+        padding:10,
+        alignItems:'center',
+        
+    },
+    image_container:{
+        borderRadius:190,
+        backgroundColor:colors.pink,
+        padding:2
+    },
+    image :{
+        width:150,
+        height:150,
+        borderRadius:190,
+    },
+    name_text:{
+        fontSize:24,
+        marginTop:20,
+        fontWeight:'bold',
+        color:colors.green
+    },
+    line_container:{
+        height:1,
+        width:'100%',
+        borderColor:colors.pink,
+        borderWidth:1,
+        marginTop:20
+    },
+    lottie_container:{
+        width:150,
+        height:150
+    },
+    result_container:{
+        padding:10,
+        borderColor:colors.pink,
+        borderRadius:8,
+        width:200,
+        elevation:8,
+        backgroundColor:'white'
+    },
+    result_text:{
+        color:colors.green,
+        fontSize:14,
+        fontWeight:'bold'
+    },
+    last_result_text:{
+        marginTop:10,
+        fontSize:16,
+        color:'black'
+    },
+    logout_icon:{
+        position:'absolute',
+        top:20,
+        right:20
+    }
+})

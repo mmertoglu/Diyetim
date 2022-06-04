@@ -53,7 +53,7 @@ const Home = (props) => {
         />
         <EvilIcons name="search" color={'gray'} size={30} style={styles.search_icon} onPress={fetch} />
       </View>
-      {loading == true ?
+      {search == '' || loading==true ?
         (
           <View style={styles.lottie_container} >
             <Text style={styles.lottie_container_text} >Search for a food to see its nutritional values</Text>
@@ -88,10 +88,11 @@ const styles = StyleSheet.create({
     elevation: 10,
     borderRadius: 8,
     margin: 10,
-    backgroundColor: 'white'
+    backgroundColor: 'white',
   },
   lottie_container:{
     flex:1,
+    
   },
   lottie_container_text:{
     alignSelf:'center',

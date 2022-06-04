@@ -7,7 +7,6 @@ import auth from '@react-native-firebase/auth'
 const Login = ({navigation}) => {
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('')
-    const [repassword,setRepassword] = useState('')
 
     const handleSignUp = async () => {
         try {

@@ -11,10 +11,12 @@ import UserInfo from "./src/pages/UserInfo/UserInfo";
 import Profile from "./src/pages/Profile/Profile";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
-
+import auth from '@react-native-firebase/auth'
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
+
+const currentUser  = auth().currentUser
 
 const HomeStack = () => {
   return (
@@ -28,6 +30,7 @@ const HomeStack = () => {
 const TabStack = () => {
   return (
     <Tab.Navigator
+
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
@@ -43,9 +46,10 @@ const TabStack = () => {
         tabBarInactiveTintColor: 'gray',
         headerShown: false,
         tabBarActiveBackgroundColor: 'white',
-        tabBarStyle: { backgroundColor: 'white' }
-
+        tabBarStyle: { backgroundColor: 'white' },
+        tabBarHideOnKeyboard:true
       })
+      
 
       }
     >
@@ -61,6 +65,7 @@ const App = () => {
     <NavigationContainer>
       <StatusBar backgroundColor={colors.pink} />
       <Stack.Navigator screenOptions={{headerShown:false}} >
+        
         <Stack.Screen name="SignUpPage" component={SignUp} />
         <Stack.Screen name="LoginPage" component={Login} />
         <Stack.Screen name="UserInfoPage" component={UserInfo} />

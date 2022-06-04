@@ -12,6 +12,6 @@ export default StyleSheet.create({
         alignItems:'center'
     },
     input:{
-        width:200
+        width:300
     }
 })

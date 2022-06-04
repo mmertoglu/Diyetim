@@ -10,7 +10,6 @@ export default StyleSheet.create({
         width:300,
         height:300,
         borderRadius:10,
-        backgroundColor:'red'
     },
     image_container:{
         backgroundColor:'white',
