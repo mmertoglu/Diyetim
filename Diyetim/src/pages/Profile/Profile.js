@@ -14,7 +14,10 @@ const Profile = ({navigation}) => {
     const [userData,setUserData] = useState([])
     const [userSession, setUserSession] = useState();
     useEffect(() => {
-        console.log(newCurrent)
+        
+          const currentUser = auth().currentUser.email.split('@',1).toString()
+          const newCurrent = currentUser.replace('.','')
+
          database().ref('users/'+newCurrent+'/'+'userInfo/').once('value').then(snapshot => {
           setUserData(snapshot.val())
         })
@@ -22,19 +25,12 @@ const Profile = ({navigation}) => {
       
     },[])
 
-   
-  useEffect(() => {
-    auth().onUserChanged(user => {
-      setUserSession(!!user)
-    })
-  }, [])
 
   const goSignOut = async () => {
     try {
       await 
      auth().signOut();
-     setUserSession(!userSession)
-     navigation.navigate('LoginPage')
+     
     } catch (error) {
       console.log(error)
     }

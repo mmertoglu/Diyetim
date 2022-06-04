@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { View, Text, Button, FlatList, TextInput, StyleSheet } from 'react-native'
+import { View, Text, Button, FlatList, TextInput, StyleSheet, TouchableOpacity } from 'react-native'
 import axios from 'axios'
 import Config from "react-native-config";
 import FoodCard from '../../components/FoodCard/FoodCard'
 import EvilIcons from 'react-native-vector-icons/EvilIcons'
 import FoodChoiceLottie from "../../components/FoodChoiceLottie/FoodChoiceLottie";
+import auth from '@react-native-firebase/auth'
 const Home = (props) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true)
@@ -42,6 +43,15 @@ const Home = (props) => {
     props.navigation.navigate('FoodDetailScreen', { item })
   }
   const renderItem = ({ item }) => <FoodCard food={item} goFoodDetail={() => goFoodDetail(item)} />
+
+  const goSignOut = () => {
+    try {
+      console.log('asd')
+      auth().signOut()
+    } catch (error) {
+      console.log(error)
+    }
+  }
   return (
     <View style={styles.container} >
       <View style={styles.inputcontainer} >
@@ -66,7 +76,6 @@ const Home = (props) => {
           renderItem={renderItem}
         />
       }
-
     </View>
   )
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import Home from "./src/pages/Home/Home";
@@ -16,7 +16,7 @@ import auth from '@react-native-firebase/auth'
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
-const currentUser  = auth().currentUser
+const currentUser = auth().currentUser
 
 const HomeStack = () => {
   return (
@@ -47,9 +47,9 @@ const TabStack = () => {
         headerShown: false,
         tabBarActiveBackgroundColor: 'white',
         tabBarStyle: { backgroundColor: 'white' },
-        tabBarHideOnKeyboard:true
+        tabBarHideOnKeyboard: true
       })
-      
+
 
       }
     >
@@ -60,16 +60,28 @@ const TabStack = () => {
   )
 }
 
+
 const App = () => {
+  const [userSession, setUserSession] = React.useState();
+  React.useEffect(() => {
+    auth().onUserChanged(user => {
+      setUserSession(!!user)
+    })
+  }, [])
   return (
     <NavigationContainer>
       <StatusBar backgroundColor={colors.pink} />
-      <Stack.Navigator screenOptions={{headerShown:false}} >
+      <Stack.Navigator screenOptions={{ headerShown: false }} >
+        {!userSession ?
+        <>
+      <Stack.Screen name="SignUpPage" component={SignUp} />
+      <Stack.Screen name="LoginPage" component={Login} />
+      <Stack.Screen name="UserInfoPage" component={UserInfo} />
+      </> : 
+      <Stack.Screen name="TabStack" component={TabStack} /> 
+      }
         
-        <Stack.Screen name="SignUpPage" component={SignUp} />
-        <Stack.Screen name="LoginPage" component={Login} />
-        <Stack.Screen name="UserInfoPage" component={UserInfo} />
-        <Stack.Screen name="TabStack" component={TabStack} />
+        
       </Stack.Navigator>
     </NavigationContainer>
   )
