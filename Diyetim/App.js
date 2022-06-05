@@ -12,6 +12,7 @@ import Profile from "./src/pages/Profile/Profile";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import auth from '@react-native-firebase/auth'
+import WhatEat from "./src/pages/WhatEat/WhatEat";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -40,6 +41,9 @@ const TabStack = () => {
           if (route.name === 'Profile') {
             iconName = 'user'
           }
+          if (route.name ==='WhatEat') {
+            iconName = 'cutlery'
+          }
           return <FontAwesome name={iconName} color={color} size={24} />
         },
         tabBarActiveTintColor: colors.pink,
@@ -54,6 +58,7 @@ const TabStack = () => {
       }
     >
       <Tab.Screen name="Home" component={HomeStack} />
+      <Tab.Screen name="WhatEat" component={WhatEat} />
       <Tab.Screen name="Profile" component={Profile} />
     </Tab.Navigator>
 
