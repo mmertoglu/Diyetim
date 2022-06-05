@@ -58,7 +58,7 @@ const UserInfo = ({navigation}) => {
             <Input placeholder='text your name...' onChangeText={(text) => setName(text) } />
             <Text style={styles.text} >Your Age</Text>
             <Input placeholder='text your age...'  onChangeText={(text) => setAge(text)} />
-            <Text style={styles.text} >Your Height</Text>
+            <Text style={styles.text} >Your Height(cm)</Text>
             <Input placeholder='text your height...' onChangeText={(text) => setHeight(text)} />
             <Text style={styles.text} >Your Weight</Text>
             <Input placeholder='text your weight...' onChangeText={(text) => setWeight(text)} />

@@ -78,14 +78,14 @@ const App = () => {
       <StatusBar backgroundColor={colors.pink} />
       <Stack.Navigator screenOptions={{ headerShown: false }} >
         {!userSession ?
-        <>
+        
       <Stack.Screen name="SignUpPage" component={SignUp} />
-      <Stack.Screen name="LoginPage" component={Login} />
-      <Stack.Screen name="UserInfoPage" component={UserInfo} />
-      </> : 
+      
+      : 
       <Stack.Screen name="TabStack" component={TabStack} /> 
       }
-        
+        <Stack.Screen name="LoginPage" component={Login} />
+      <Stack.Screen name="UserInfoPage" component={UserInfo} />
         
       </Stack.Navigator>
     </NavigationContainer>
