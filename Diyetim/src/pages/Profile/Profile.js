@@ -1,5 +1,5 @@
 import React,{useEffect,useState} from "react";
-import {View,Text,Image} from 'react-native'
+import {View,Text,Image, TouchableOpacity} from 'react-native'
 import database from '@react-native-firebase/database'
 import auth from '@react-native-firebase/auth'
 import styles from './Profile.style'
@@ -63,6 +63,9 @@ const Profile = ({navigation}) => {
             <Text style={styles.last_result_text} >Your body mass index indicates that you are a slightly overweight person.</Text> :
             <Text style={styles.last_result_text} >Your body mass index indicates that you are a overweight person.</Text> 
         }
+        <TouchableOpacity style={styles.button} >
+          <Text style={styles.button_text} >Update Profile</Text>
+        </TouchableOpacity>
             
 
         </View>

@@ -56,5 +56,21 @@ export default StyleSheet.create({
         position:'absolute',
         top:20,
         right:20
+    },
+    button:{
+        backgroundColor:'white',
+        padding:10,
+        marginTop:50,
+        borderRadius:8,
+        elevation:8,
+        width:200,
+        alignItems:'center',
+        justifyContent:'center'
+    },
+    button_text:{
+        color:colors.pink,
+        fontSize:16,
+        fontWeight:'bold',
+        lineHeight:30
     }
 })
